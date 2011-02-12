@@ -8,6 +8,7 @@
     <th>Zip</th>
     <th>Lat</th>
     <th>Lng</th>
+    <th>Item Requested:</th>
     <th></th>
     <th></th>
     <th></th>
@@ -21,6 +22,7 @@
     <td><%= location.zip %></td>
     <td><%= location.lat %></td>
     <td><%= location.lng %></td>
+    <td><%= location.item %></td>
     <td><%= link_to 'Show', location %></td>
     <td><%= link_to 'Edit', edit_location_path(location) %></td>
     <td><%= link_to 'Destroy', location, :confirm => 'Are you sure?', :method => :delete %></td>
