@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+
 <p>
   <b>Street adress:</b>
   <%= @location.street_adress %>
@@ -29,6 +30,13 @@
   <b>Lng:</b>
   <%= @location.lng %>
 </p>
+
+<p>
+  <b>Item Requested:</b>
+  <%= @location.item %>
+</p>
+
+
 
 
 <%= link_to 'Edit', edit_location_path(@location) %> |
