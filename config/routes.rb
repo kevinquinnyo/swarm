@@ -4,7 +4,8 @@ Swarm::Application.routes.draw do
 
   match "pages/contact"
   match "pages/about"
-  match '/test', :to => 'locations#new'
+  match '/get', :to => 'locations#new'
+  match '/deliver', :to => 'locations#index'
   resources :locations
 
   # The priority is based upon order of creation:
