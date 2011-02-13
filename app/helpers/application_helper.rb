@@ -2,7 +2,7 @@ module ApplicationHelper
 
 #Return a title on a per-page basis.
 		def title
-			base_title = "Kevin's Sample App"
+			base_title = "Swarm"
 			if @title.nil?
 				base_title
 			else

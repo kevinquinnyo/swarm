@@ -1,11 +1,15 @@
 Swarm::Application.routes.draw do
   
-  root :to => "pages#home"  
+  devise_for :users
 
-  match "pages/contact"
-  match "pages/about"
+  root :to => "pages#home"  
+  
+  get "pages/contact"
+  get "pages/about"
   match '/get', :to => 'locations#new'
   match '/deliver', :to => 'locations#index'
+
+  
   resources :locations
 
   # The priority is based upon order of creation:
