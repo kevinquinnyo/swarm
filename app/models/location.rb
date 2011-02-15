@@ -1,6 +1,7 @@
 class Location < ActiveRecord::Base
+  belongs_to :user
 
-  attr_accessible :street_adress, :city, :state, :zip, :item  
+  attr_accessible :street_adress, :city, :state, :zip, :item
   acts_as_mappable :auto_geocode => true
 
   def address

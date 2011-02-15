@@ -1,35 +1,45 @@
-<h1>Current Requests</h1>
 
-<table>
-  <tr>
-    <th>Street adress</th>
-    <th>City</th>
-    <th>State</th>
-    <th>Zip</th>
-    <th>Lat</th>
-    <th>Lng</th>
-    <th>Item Requested:</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @locations.each do |location| %>
-  <tr>
-    <td><%= location.street_adress %></td>
-    <td><%= location.city %></td>
-    <td><%= location.state %></td>
-    <td><%= location.zip %></td>
-    <td><%= location.lat %></td>
-    <td><%= location.lng %></td>
-    <td><%= location.item %></td>
-    <td><%= link_to 'Show', location %></td>
-    <td><%= link_to 'Edit', edit_location_path(location) %></td>
-    <td><%= link_to 'Destroy', location, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+<!--  <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0px; padding: 0px }
+      #map_canvas { height: 100%; background-color: #fcc }
+    </style>
+-->
 
-<br />
+<script type="text/javascript">
+  function initialize() {
+    var latlng = new google.maps.LatLng(33.77, -84.36);
+    var myOptions = {
+      zoom: 12,
+      center: latlng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("map_canvas"),
+        myOptions);
 
-<%= link_to 'New Location', new_location_path %>
+      //put location markers on map
+      <% @locations.each do |location| %>
+      var request = new google.maps.LatLng(<%= location.lat %>, <%= location.lng %>);
+      var marker = new google.maps.Marker({
+      position: request, 
+      map: map, 
+      title: "<%=location.item %>"
+      
+      });     
+      <% end %>
+  }
+document.writeln('hello world!');
+
+
+</script>
+<body onload="initialize()">
+  <div id="map_canvas" style="width:500px; height:500px"></div>
+
+
+
+
+
+djkfjkjnf
+
+

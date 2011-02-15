@@ -4,10 +4,12 @@ Swarm::Application.routes.draw do
 
   root :to => "pages#home"  
   
+  get "pages/maptest"
   get "pages/contact"
   get "pages/about"
   match '/get', :to => 'locations#new'
   match '/deliver', :to => 'locations#index'
+  match '/maptest', :to => "locations#maptest"
 
   
   resources :locations

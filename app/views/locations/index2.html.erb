@@ -1,0 +1,40 @@
+<h1>Current Requests</h1>
+
+<%= link_to "View Map", maptest_path %></li>
+<table>
+  <tr>
+    <th>User ID</th>
+    <th>Street adress</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Lat</th>
+    <th>Lng</th>
+    <th>Item Requested:</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<h1><%= current_user.id %> </h1>^^^this is the user id, i need to make this appear below.
+
+<% @locations.each do |location| %>
+  <tr>
+    <td><%= location.user_id %></td>
+    <td><%= location.street_adress %></td>
+    <td><%= location.city %></td>
+    <td><%= location.state %></td>
+    <td><%= location.zip %></td>
+    <td><%= location.lat %></td>
+    <td><%= location.lng %></td>
+    <td><%= location.item %></td>
+    <td><%= link_to 'Show', location %></td>
+    <td><%= link_to 'Edit', edit_location_path(location) %></td>
+    <td><%= link_to 'Destroy', location, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Location', new_location_path %>

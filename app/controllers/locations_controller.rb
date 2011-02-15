@@ -80,4 +80,10 @@ class LocationsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def maptest
+  render :layout => false
+  @locations = Location.all
+    
+  end
 end
